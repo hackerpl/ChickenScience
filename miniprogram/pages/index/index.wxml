@@ -1,0 +1,33 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- Logo 区域 -->
+  <view class="logo-section">
+    <text class="logo">🐣</text>
+    <text class="app-name">小鸡科学</text>
+    <text class="app-slogan">让孩子爱上科学</text>
+  </view>
+
+  <!-- 身份选择区域 -->
+  <view class="identity-section" wx:if="{{!identitySelected}}">
+    <text class="question">你是科学大师还是小白？</text>
+
+    <view class="options">
+      <button class="option-btn master-btn" bindtap="selectMaster">
+        <text class="icon">🎓</text>
+        <text class="text">我是科学大师</text>
+        <text class="desc">跳过新手指引</text>
+      </button>
+
+      <button class="option-btn beginner-btn" bindtap="selectBeginner">
+        <text class="icon">🐣</text>
+        <text class="text">我是小白</text>
+        <text class="desc">学习科学基础知识</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- 加载中状态 -->
+  <view class="loading-section" wx:if="{{loading}}">
+    <text class="loading-text">正在初始化...</text>
+  </view>
+</view>

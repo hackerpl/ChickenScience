@@ -1,0 +1,4 @@
+{
+  "read": "auth.openid == doc.openid || doc._id == 'public'",
+  "write": "auth.openid == doc.openid"
+}

@@ -1,0 +1,236 @@
+
+  {
+    "subject": "物理",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "水星上有水吗？",
+    "answer": "错",
+    "options": ["对", "错"],
+    "difficulty": 1,
+    "knowledge_point": "太阳系",
+    "explanation": "水星是太阳系中最小的行星，名字虽然有'水'字，但实际上水星表面没有液态水，因为离太阳太近，温度极高。",
+    "status": "active"
+  }
+  {
+    "subject": "物理",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "声音在真空中可以传播吗？",
+    "answer": "错",
+    "options": ["对", "错"],
+    "difficulty": 2,
+    "knowledge_point": "声学",
+    "explanation": "声音需要介质才能传播，真空没有介质，所以声音无法在真空中传播。这也是为什么宇航员在太空中需要用无线电通讯。",
+    "status": "active"
+  }
+  {
+    "subject": "物理",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "光的传播速度比声音快吗？",
+    "answer": "对",
+    "options": ["对", "错"],
+    "difficulty": 1,
+    "knowledge_point": "光学",
+    "explanation": "光速约为30万公里/秒，而声音在空气中的传播速度约为340米/秒。所以先看到闪电再听到雷声。",
+    "status": "active"
+  }
+  {
+    "subject": "物理",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "冰比水轻，所以会浮在水面上吗？",
+    "answer": "对",
+    "options": ["对", "错"],
+    "difficulty": 1,
+    "knowledge_point": "物质状态",
+    "explanation": "水结成冰时体积会膨胀，密度变小，所以冰能浮在水面上。这对水中的生物很重要，冰层可以保温。",
+    "status": "active"
+  }
+  {
+    "subject": "物理",
+    "grade_level": "小学四年级",
+    "type": "填空题",
+    "question": "地球表面的重力方向是向____的。",
+    "answer": "下",
+    "difficulty": 1,
+    "knowledge_point": "重力",
+    "explanation": "地球的重力指向地心，所以我们感觉到的方向是向下的。重力的存在让我们能站在地面上。",
+    "status": "active"
+  }
+  {
+    "subject": "化学",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "水的化学式是H₂O，由氢和氧组成吗？",
+    "answer": "对",
+    "options": ["对", "错"],
+    "difficulty": 1,
+    "knowledge_point": "水的组成",
+    "explanation": "水分子由2个氢原子和1个氧原子组成。水是生命之源，地球表面约71%被水覆盖。",
+    "status": "active"
+  }
+  {
+    "subject": "化学",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "空气主要由氧气组成吗？",
+    "answer": "错",
+    "options": ["对", "错"],
+    "difficulty": 2,
+    "knowledge_point": "空气成分",
+    "explanation": "空气中含量最多的是氮气（约78%），氧气约占21%，还有少量二氧化碳和其他气体。",
+    "status": "active"
+  }
+  {
+    "subject": "化学",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "铁生锈是因为与氧气和水发生了化学反应吗？",
+    "answer": "对",
+    "options": ["对", "错"],
+    "difficulty": 2,
+    "knowledge_point": "氧化反应",
+    "explanation": "铁生锈是铁与氧气和水发生氧化反应的过程，生成红棕色的氧化铁。防止铁生锈可以涂油或刷漆。",
+    "status": "active"
+  }
+  {
+    "subject": "化学",
+    "grade_level": "小学四年级",
+    "type": "填空题",
+    "question": "燃烧需要____、助燃物和可燃物三个条件。",
+    "answer": "温度",
+    "difficulty": 2,
+    "knowledge_point": "燃烧三要素",
+    "explanation": "燃烧三要素是：可燃物、助燃物（通常是氧气）和达到着火点。灭火就是移除其中一个条件。",
+    "status": "active"
+  }
+  {
+    "subject": "生物",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "植物进行光合作用需要阳光、水和二氧化碳吗？",
+    "answer": "对",
+    "options": ["对", "错"],
+    "difficulty": 1,
+    "knowledge_point": "光合作用",
+    "explanation": "光合作用是植物利用阳光、水和二氧化碳制造养分并释放氧气的过程。光合作用是地球上最重要的化学反应之一。",
+    "status": "active"
+  }
+  {
+    "subject": "生物",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "人的心脏位于身体的左侧吗？",
+    "answer": "错",
+    "options": ["对", "错"],
+    "difficulty": 2,
+    "knowledge_point": "人体结构",
+    "explanation": "人的心脏位于胸腔中部偏左，约2/3在身体中线左侧，1/3在右侧。心脏大小和自己的拳头差不多。",
+    "status": "active"
+  }
+  {
+    "subject": "生物",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "鱼是用鳃呼吸的吗？",
+    "answer": "对",
+    "options": ["对", "错"],
+    "difficulty": 1,
+    "knowledge_point": "动物呼吸",
+    "explanation": "鱼用鳃从水中获取氧气。水流过鳃时，鳃丝中的血管吸收水中的氧气，同时排出二氧化碳。",
+    "status": "active"
+  }
+  {
+    "subject": "生物",
+    "grade_level": "小学四年级",
+    "type": "填空题",
+    "question": "人体最大的器官是____。",
+    "answer": "皮肤",
+    "difficulty": 2,
+    "knowledge_point": "人体器官",
+    "explanation": "皮肤是人体最大的器官，成年人皮肤面积约1.5-2平方米。皮肤保护身体免受外界伤害，还能调节体温。",
+    "status": "active"
+  }
+  {
+    "subject": "生物",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "恐龙和人类生活在同一个时代吗？",
+    "answer": "错",
+    "options": ["对", "错"],
+    "difficulty": 1,
+    "knowledge_point": "生物演化",
+    "explanation": "恐龙在约6500万年前灭绝，而人类最早出现在约几百万年前。恐龙和人类相隔了数千万年。",
+    "status": "active"
+  }
+  {
+    "subject": "物理",
+    "grade_level": "小学五年级",
+    "type": "判断题",
+    "question": "凸透镜能聚光吗？",
+    "answer": "对",
+    "options": ["对", "错"],
+    "difficulty": 2,
+    "knowledge_point": "透镜",
+    "explanation": "凸透镜中间厚边缘薄，能让平行光线汇聚到一点。放大镜就是利用凸透镜的原理。",
+    "status": "active"
+  }
+  {
+    "subject": "化学",
+    "grade_level": "小学五年级",
+    "type": "判断题",
+    "question": "盐（氯化钠）溶于水后会消失吗？",
+    "answer": "错",
+    "options": ["对", "错"],
+    "difficulty": 2,
+    "knowledge_point": "溶解",
+    "explanation": "盐溶于水后只是分散成肉眼看不见的微小粒子，并没有消失。水蒸发后盐会重新结晶出来。",
+    "status": "active"
+  }
+  {
+    "subject": "生物",
+    "grade_level": "小学五年级",
+    "type": "判断题",
+    "question": "人体有206块骨头吗？",
+    "answer": "对",
+    "options": ["对", "错"],
+    "difficulty": 2,
+    "knowledge_point": "骨骼系统",
+    "explanation": "成年人体有206块骨头。但婴儿有更多骨头（约300块），长大后有些骨头会融合在一起。",
+    "status": "active"
+  }
+  {
+    "subject": "物理",
+    "grade_level": "小学六年级",
+    "type": "填空题",
+    "question": "电路中必须有____、导线和开关。",
+    "answer": "电源",
+    "difficulty": 2,
+    "knowledge_point": "电路基础",
+    "explanation": "一个完整的电路需要电源（提供电能）、导线（传输电能）和用电器（消耗电能），开关用来控制电路通断。",
+    "status": "active"
+  }
+  {
+    "subject": "化学",
+    "grade_level": "小学六年级",
+    "type": "判断题",
+    "question": "酸能使蓝色石蕊试纸变红吗？",
+    "answer": "对",
+    "options": ["对", "错"],
+    "difficulty": 2,
+    "knowledge_point": "酸碱指示",
+    "explanation": "石蕊试纸是一种酸碱指示剂。酸性物质使蓝色石蕊变红，碱性物质使红色石蕊变蓝。",
+    "status": "active"
+  }
+  {
+    "subject": "生物",
+    "grade_level": "小学六年级",
+    "type": "填空题",
+    "question": "细胞是生命的基本____。",
+    "answer": "单位",
+    "difficulty": 1,
+    "knowledge_point": "细胞理论",
+    "explanation": "细胞是生命的基本单位，所有生物都由细胞组成。人体由数万亿个细胞组成，每个细胞都有自己的功能。",
+    "status": "active"
+  }

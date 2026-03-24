@@ -1,0 +1,42 @@
+<!--pages/guide/guide.wxml-->
+<view class="container">
+  <!-- 标题栏 -->
+  <view class="header">
+    <text class="title">科学基础知识</text>
+    <text class="subtitle">第 {{currentPage + 1}}/{{guideContent.length}} 页</text>
+  </view>
+
+  <!-- 内容区域 -->
+  <scroll-view class="content" scroll-y enable-back-to-top bindscroll="onScroll">
+    <view class="content-inner">
+      <!-- 当前页面内容 -->
+      <view class="guide-page">
+        <text class="page-title">{{guideContent[currentPage].title}}</text>
+        <view class="page-content">
+          <text class="text">{{guideContent[currentPage].content}}</text>
+        </view>
+
+        <!-- 示例/图片 -->
+        <view class="example" wx:if="{{guideContent[currentPage].example}}">
+          <text class="example-label">💡 示例</text>
+          <text class="example-text">{{guideContent[currentPage].example}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部导航 -->
+  <view class="footer">
+    <button class="nav-btn prev-btn" wx:if="{{currentPage > 0}}" bindtap="prevPage">
+      上一页
+    </button>
+    <button class="nav-btn next-btn" bindtap="nextPage">
+      {{currentPage === guideContent.length - 1 ? '开始学习' : '下一页'}}
+    </button>
+  </view>
+
+  <!-- 快速翻页提示 -->
+  <view class="fast-scroll-tip" wx:if="{{showFastScrollTip}}">
+    <text>⚠️ 请认真阅读新手指引</text>
+  </view>
+</view>

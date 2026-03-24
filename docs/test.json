@@ -1,0 +1,64 @@
+{
+    "subject": "物理",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "水星上有水吗？",
+    "answer": "错",
+    "options": ["对", "错"],
+    "difficulty": 1,
+    "knowledge_point": "太阳系",
+    "explanation": "水星虽然名字里有'水'字，但实际上是距离太阳最近的行星，表面没有液态水，昼夜温差极大。",
+    "status": "active",
+    "created_at": "2026-02-16T00:00:00Z"
+  }
+  {
+    "subject": "物理",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "声音在真空中可以传播吗？",
+    "answer": "错",
+    "options": ["对", "错"],
+    "difficulty": 2,
+    "knowledge_point": "声学",
+    "explanation": "声音需要介质才能传播，真空中没有介质，所以声音无法在真空中传播。",
+    "status": "active",
+    "created_at": "2026-02-16T00:00:00Z"
+  }
+  {
+    "subject": "化学",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "水的化学式是H₂O，由氢和氧组成吗？",
+    "answer": "对",
+    "options": ["对", "错"],
+    "difficulty": 1,
+    "knowledge_point": "水的组成",
+    "explanation": "水分子由2个氢原子和1个氧原子组成，化学式为H₂O。",
+    "status": "active",
+    "created_at": "2026-02-16T00:00:00Z"
+  }
+  {
+    "subject": "生物",
+    "grade_level": "小学四年级",
+    "type": "判断题",
+    "question": "植物进行光合作用需要阳光、水和二氧化碳吗？",
+    "answer": "对",
+    "options": ["对", "错"],
+    "difficulty": 1,
+    "knowledge_point": "光合作用",
+    "explanation": "光合作用是植物利用阳光、水和二氧化碳制造养分的过程，同时释放氧气。",
+    "status": "active",
+    "created_at": "2026-02-16T00:00:00Z"
+  }
+  {
+    "subject": "物理",
+    "grade_level": "小学四年级",
+    "type": "填空题",
+    "question": "地球表面的重力方向是向____的。",
+    "answer": "下",
+    "difficulty": 1,
+    "knowledge_point": "重力",
+    "explanation": "地球的重力指向地心，所以我们感觉到的重力方向是向下的。",
+    "status": "active",
+    "created_at": "2026-02-16T00:00:00Z"
+  }

@@ -1,0 +1,21 @@
+Loading project all files...
+Loading project all files success
+编译 app.json
+app.json: 未找到 ["pages"][4] 对应的 pages/parent/parent.wxml 文件
+Loading project all files...
+Loading project all files success
+Loading project all files...
+Loading project all files success
+编译 app.json
+app.json: 未找到 ["pages"][4] 对应的 pages/parent/parent.wxml 文件
+编译 app.json
+app.json: 未找到 ["pages"][4] 对应的 pages/parent/parent.wxml 文件
+Loading project all files...
+Loading project all files success
+编译 app.json
+app.json: ["tabBar"]["list"][0]["iconPath"]: "images/tab-home.png" 未找到
+["tabBar"]["list"][0]["selectedIconPath"]: "images/tab-home-active.png" 未找到
+["tabBar"]["list"][1]["iconPath"]: "images/tab-study.png" 未找到
+["tabBar"]["list"][1]["selectedIconPath"]: "images/tab-study-active.png" 未找到
+["tabBar"]["list"][2]["iconPath"]: "images/tab-profile.png" 未找到
+["tabBar"]["list"][2]["selectedIconPath"]: "images/tab-profile-active.png" 未找到

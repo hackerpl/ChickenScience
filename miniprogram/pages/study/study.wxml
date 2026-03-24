@@ -1,0 +1,160 @@
+<!--pages/study/study.wxml-->
+<view class="container">
+  <!-- 用户信息栏 -->
+  <view class="user-bar">
+    <view class="user-info">
+      <view class="avatar">{{userInfo.nickname ? userInfo.nickname.charAt(0) : '👤'}}</view>
+      <text class="nickname">{{userInfo.nickname || '科学小达人'}}</text>
+      <view class="vip-badge" wx:if="{{userInfo.vip_level > 1}}">VIP{{userInfo.vip_level}}</view>
+    </view>
+    <view class="coin-display">
+      <text class="coin-icon">🪙</text>
+      <text class="coin-text">{{userInfo.coins || 0}}</text>
+    </view>
+  </view>
+
+  <!-- 答题模式选择 -->
+  <view class="mode-section" wx:if="{{!currentMode}}">
+    <text class="section-title">选择学习模式</text>
+
+    <view class="mode-list">
+      <view class="mode-card" bindtap="startStudy" data-mode="normal">
+        <text class="mode-icon">📖</text>
+        <text class="mode-name">日常练习</text>
+        <text class="mode-desc">根据你的年级出题</text>
+      </view>
+
+      <view class="mode-card" bindtap="startStudy" data-mode="wrong">
+        <text class="mode-icon">📝</text>
+        <text class="mode-name">错题复习</text>
+        <text class="mode-desc">复习你的错题</text>
+      </view>
+
+      <view class="mode-card challenge" bindtap="startStudy" data-mode="challenge">
+        <text class="mode-icon">🏆</text>
+        <text class="mode-name">挑战模式</text>
+        <text class="mode-desc">挑战更高难度</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 答题界面 -->
+  <view class="quiz-section" wx:if="{{currentMode && currentQuestion}}">
+    <!-- 进度条 -->
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{((currentIndex + 1) / totalCount) * 100}}%"></view>
+    </view>
+    <text class="progress-text">第 {{currentIndex + 1}} 题 / 共 {{totalCount}} 题</text>
+
+    <!-- 题目卡片 -->
+    <view class="question-card">
+      <view class="question-header">
+        <text class="subject-tag">{{currentQuestion.subject}}</text>
+        <text class="difficulty-tag">{{currentQuestion.difficulty === 1 ? '简单' : currentQuestion.difficulty === 2 ? '中等' : '困难'}}</text>
+      </view>
+
+      <text class="question-text">{{currentQuestion.question}}</text>
+
+      <!-- 判断题选项 -->
+      <view class="options" wx:if="{{currentQuestion.type === '判断题'}}">
+        <button
+          class="option-btn {{selectedAnswer === '对' ? 'selected' : ''}} {{answerResult === '对' ? 'correct' : ''}} {{answerResult === '错' && selectedAnswer === '对' ? 'wrong' : ''}}"
+          bindtap="selectAnswer"
+          data-answer="对"
+          disabled="{{!!answerResult}}">
+          ✅ 对
+        </button>
+        <button
+          class="option-btn {{selectedAnswer === '错' ? 'selected' : ''}} {{answerResult === '错' ? 'correct' : ''}} {{answerResult === '对' && selectedAnswer === '错' ? 'wrong' : ''}}"
+          bindtap="selectAnswer"
+          data-answer="错"
+          disabled="{{!!answerResult}}">
+          ❌ 错
+        </button>
+      </view>
+
+      <!-- 填空题选项 -->
+      <view class="fill-blank" wx:if="{{currentQuestion.type === '填空题'}}">
+        <input
+          class="fill-input"
+          placeholder="请输入你的答案"
+          value="{{fillAnswer}}"
+          bindinput="onFillInput"
+          disabled="{{!!answerResult}}" />
+      </view>
+
+      <!-- 答案结果 -->
+      <view class="result-section" wx:if="{{answerResult}}">
+        <view class="result-message correct" wx:if="{{isCorrect}}">
+          <text>🎉 回答正确！+1 金币</text>
+        </view>
+        <view class="result-message wrong" wx:else>
+          <text>❌ 回答错误</text>
+          <text class="wrong-count">这是第 {{wrongCount}} 次错误</text>
+        </view>
+
+        <button class="next-btn" bindtap="nextQuestion">
+          {{currentIndex === totalCount - 1 ? '完成' : '下一题'}}
+        </button>
+      </view>
+
+      <!-- 提交按钮（填空题） -->
+      <view class="submit-section" wx:if="{{currentQuestion.type === '填空题' && !answerResult}}">
+        <button class="submit-btn" bindtap="submitFillAnswer" disabled="{{!fillAnswer}}">
+          提交答案
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 视频讲解弹窗 -->
+  <view class="video-modal" wx:if="{{showVideo}}">
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">观看讲解视频</text>
+        <text class="modal-tip">必须看完才能继续答题</text>
+      </view>
+
+      <video
+        class="video-player"
+        src="{{currentQuestion.videoUrl}}"
+        autoplay
+        show-center-play-btn="{{false}}"
+        enable-progress-gesture="{{false}}"
+        bindended="onVideoEnd"
+        id="videoPlayer">
+      </video>
+
+      <button class="continue-btn" wx:if="{{videoWatched}}" bindtap="closeVideo">
+        继续答题
+      </button>
+    </view>
+  </view>
+
+  <!-- 完成弹窗 -->
+  <view class="complete-modal" wx:if="{{showComplete}}">
+    <view class="modal-content">
+      <text class="complete-icon">🎉</text>
+      <text class="complete-title">练习完成！</text>
+
+      <view class="complete-stats">
+        <view class="stat-item">
+          <text class="stat-label">答题数量</text>
+          <text class="stat-value">{{totalCount}} 题</text>
+        </view>
+        <view class="stat-item">
+          <text class="stat-label">正确率</text>
+          <text class="stat-value">{{correctRate}}%</text>
+        </view>
+        <view class="stat-item">
+          <text class="stat-label">获得金币</text>
+          <text class="stat-value">+{{earnedCoins}}</text>
+        </view>
+      </view>
+
+      <button class="back-btn" bindtap="backToHome">
+        返回
+      </button>
+    </view>
+  </view>
+</view>

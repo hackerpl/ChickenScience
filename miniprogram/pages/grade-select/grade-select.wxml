@@ -1,0 +1,25 @@
+<!-- pages/grade-select/grade-select.wxml -->
+<view class="container">
+  <!-- 顶部装饰 -->
+  <view class="header">
+    <text class="logo">🎓</text>
+    <text class="title">选择你的年级</text>
+    <text class="subtitle">我们会根据年级推荐适合你的题目</text>
+  </view>
+
+  <!-- 年级列表 -->
+  <view class="grade-list">
+    <view class="grade-item" wx:for="{{gradeList}}" wx:key="index"
+          data-grade="{{item}}"
+          bindtap="selectGrade">
+      <text class="grade-text">{{item}}</text>
+      <text class="grade-arrow">→</text>
+    </view>
+  </view>
+
+  <!-- 提示信息 -->
+  <view class="tips">
+    <text class="tips-icon">💡</text>
+    <text class="tips-text">年级可以在家长模式中修改</text>
+  </view>
+</view>

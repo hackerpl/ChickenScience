@@ -1,0 +1,147 @@
+<!--pages/parent/parent.wxml-->
+<view class="container">
+  <!-- 家长模式入口 -->
+  <view class="entry-section" wx:if="{{!isVerified}}">
+    <view class="lock-icon">🔐</view>
+    <text class="title">家长模式</text>
+    <text class="desc">需要验证身份才能进入</text>
+
+    <button class="verify-btn" bindtap="goToVerify">
+      开始验证
+    </button>
+  </view>
+
+  <!-- 家长控制面板 -->
+  <view class="panel-section" wx:if="{{isVerified}}">
+    <!-- 用户信息卡片 -->
+    <view class="user-card">
+      <view class="avatar">{{childInfo.nickname ? childInfo.nickname.charAt(0) : '👤'}}</view>
+      <view class="user-info">
+        <text class="nickname">{{childInfo.nickname || '孩子姓名'}}</text>
+        <text class="grade">{{childInfo.grade || '小学四年级'}}</text>
+      </view>
+      <button class="edit-btn" bindtap="editChildInfo">
+        ✏️ 编辑
+      </button>
+    </view>
+
+    <!-- 学习报告 -->
+    <view class="section-card">
+      <view class="section-header" bindtap="toggleReport">
+        <view class="section-left">
+          <text class="section-icon">📊</text>
+          <text class="section-title">学习报告</text>
+        </view>
+        <text class="expand-icon">{{reportExpanded ? '▼' : '▶'}}</text>
+      </view>
+
+      <view class="section-content" wx:if="{{reportExpanded}}">
+        <view class="report-stats">
+          <view class="stat-item">
+            <text class="stat-label">本周答题</text>
+            <text class="stat-value">{{reportData.weekQuestions || 0}} 题</text>
+          </view>
+          <view class="stat-item">
+            <text class="stat-label">正确率</text>
+            <text class="stat-value">{{reportData.correctRate || 0}}%</text>
+          </view>
+          <view class="stat-item">
+            <text class="stat-label">学习时长</text>
+            <text class="stat-value">{{reportData.studyDuration || 0}} 分钟</text>
+          </view>
+        </view>
+
+        <view class="report-chart">
+          <text class="chart-title">最近7天学习时长</text>
+          <view class="chart-bars">
+            <view class="bar" wx:for="{{reportData.dailyDuration}}" wx:key="index">
+              <view class="bar-fill" style="height: {{item * 2}}rpx;"></view>
+              <text class="bar-label">{{item}}分钟</text>
+            </view>
+          </view>
+        </view>
+
+        <button class="detail-btn" bindtap="viewDetailReport">
+          查看详细报告
+        </button>
+      </view>
+    </view>
+
+    <!-- 内容设置 -->
+    <view class="section-card">
+      <view class="section-header" bindtap="toggleSettings">
+        <view class="section-left">
+          <text class="section-icon">⚙️</text>
+          <text class="section-title">内容设置</text>
+        </view>
+        <text class="expand-icon">{{settingsExpanded ? '▼' : '▶'}}</text>
+      </view>
+
+      <view class="section-content" wx:if="{{settingsExpanded}}">
+        <view class="setting-item">
+          <text class="setting-label">年级</text>
+          <picker class="setting-picker" mode="selector" range="{{grades}}" value="{{gradeIndex}}" bindchange="onGradeChange">
+            <view class="picker-text">{{childInfo.grade || '选择年级'}} ></view>
+          </picker>
+        </view>
+
+        <view class="setting-item">
+          <text class="setting-label">学习科目</text>
+          <view class="subject-tags">
+            <view class="subject-tag {{item.selected ? 'selected' : ''}}"
+                  wx:for="{{subjects}}"
+                  wx:key="index"
+                  bindtap="toggleSubject"
+                  data-index="{{index}}">
+              {{item.name}}
+            </view>
+          </view>
+        </view>
+
+        <button class="save-btn" bindtap="saveSettings">
+          保存设置
+        </button>
+      </view>
+    </view>
+
+    <!-- 监督功能 -->
+    <view class="section-card">
+      <view class="section-header" bindtap="toggleMonitor">
+        <view class="section-left">
+          <text class="section-icon">👁️</text>
+          <text class="section-title">监督功能</text>
+        </view>
+        <text class="expand-icon">{{monitorExpanded ? '▼' : '▶'}}</text>
+      </view>
+
+      <view class="section-content" wx:if="{{monitorExpanded}}">
+        <view class="monitor-item" bindtap="viewFilteredContent">
+          <view class="monitor-left">
+            <text class="monitor-icon">🚫</text>
+            <view class="monitor-info">
+              <text class="monitor-title">被过滤的内容</text>
+              <text class="monitor-desc">查看孩子发送但被拦截的内容</text>
+            </view>
+          </view>
+          <text class="monitor-badge">{{filteredCount}}</text>
+        </view>
+
+        <view class="monitor-item" bindtap="viewChatHistory">
+          <view class="monitor-left">
+            <text class="monitor-icon">💬</text>
+            <view class="monitor-info">
+              <text class="monitor-title">聊天记录</text>
+              <text class="monitor-desc">查看孩子与好友的聊天内容</text>
+            </view>
+          </view>
+          <text class="monitor-arrow">></text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 退出家长模式 -->
+    <button class="exit-btn" bindtap="exitParentMode">
+      退出家长模式
+    </button>
+  </view>
+</view>
